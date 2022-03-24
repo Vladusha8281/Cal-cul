@@ -1,0 +1,23 @@
+.calcul-cal{
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(174, 199, 226);
+    padding: 30px;
+    border: 1px black solid;
+}
+
+.calcul-cal .operBlock button{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+
+.calcul-cal .inputBlock .number {
+    display: inline-block;
+    padding: 10px;
+}
+.calcul-cal .inputBlock .number label {
+    display: block;
+}
+
