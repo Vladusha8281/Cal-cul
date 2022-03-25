@@ -2,41 +2,40 @@ let plusJs = document.getElementById('plus')
 let minusJs = document.getElementById('minus')
 let delJs = document.getElementById('del')
 let umnogJs = document.getElementById('umnog')
+let inputOneJs = document.getElementById('inputOne')
+let inputTwoJs = document.getElementById('inputTwo')
 
-function calcul() {
+function getNumb1() {
+    return Number(inputOneJs.value)
 }
 
-function onPlus() {
-    let inputOneJs = document.getElementById('inputOne')
-    let inputTwoJs = document.getElementById('inputTwo')
-    let numberOneJs = Number(inputOneJs.value)
-    let numberTwoJs = Number(inputTwoJs.value)
-    let resultP = numberOneJs + numberTwoJs
+function getNumb2() {
+    return Number(inputTwoJs.value)
+}
+
+function oper(code) {
+    if (code === '+') {
+        var resultP = getNumb1() + getNumb2()
+    } else if (code === '-') {
+        var resultP = getNumb1() - getNumb2()
+    } else if (code === '*') {
+        var resultP = getNumb1() * getNumb2()
+    } else {
+        var resultP = getNumb1() / getNumb2()
+    }
     window.alert(resultP)
 }
+function onPlus() {
+    oper('+')
+}
 function onMinus() {
-    let inputOneJs = document.getElementById('inputOne')
-    let inputTwoJs = document.getElementById('inputTwo')
-    let numberOneJs = Number(inputOneJs.value)
-    let numberTwoJs = Number(inputTwoJs.value)
-    let resultM = numberOneJs - numberTwoJs
-    window.alert(resultM)
+    oper('-')
 }
 function onDel() {
-    let inputOneJs = document.getElementById('inputOne')
-    let inputTwoJs = document.getElementById('inputTwo')
-    let numberOneJs = Number(inputOneJs.value)
-    let numberTwoJs = Number(inputTwoJs.value)
-    let resultD = numberOneJs / numberTwoJs
-    window.alert(resultD)
+    oper('/')
 }
 function onUmnog() {
-    let inputOneJs = document.getElementById('inputOne')
-    let inputTwoJs = document.getElementById('inputTwo')
-    let numberOneJs = Number(inputOneJs.value)
-    let numberTwoJs = Number(inputTwoJs.value)
-    let resultU = numberOneJs * numberTwoJs
-    window.alert(resultU)
+    oper('*')
 }
 
 plusJs.addEventListener('click', onPlus)
